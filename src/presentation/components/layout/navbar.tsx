@@ -17,23 +17,31 @@ export const Navbar = () => {
   const location = useLocation()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-surface border-b-2 border-border shadow-[0_4px_0_0_#1D3B7A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="font-display text-xl font-bold text-foreground">
-            Fab
+          <Link
+            to="/"
+            className="group font-display text-xl font-bold text-foreground
+              hover:text-violet transition-colors"
+          >
+            {'<'}
+            <span className="text-violet">Fab</span>
+            {' />'}
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'text-sm font-medium transition-colors hover:text-foreground',
+                  'relative px-4 py-2 font-mono text-xs uppercase tracking-[0.15em]',
+                  'transition-all duration-200',
+                  'hover:translate-y-[-2px]',
                   location.pathname === item.href
-                    ? 'text-foreground'
-                    : 'text-muted'
+                    ? 'text-violet bg-surface-2 border border-border shadow-[2px_2px_0_0_#1D3B7A]'
+                    : 'text-muted hover:text-foreground border border-transparent'
                 )}
               >
                 {item.label}
@@ -43,26 +51,35 @@ export const Navbar = () => {
 
           <button
             type="button"
-            className="md:hidden text-muted hover:text-foreground"
+            className={cn(
+              'md:hidden text-muted hover:text-foreground',
+              'border border-border p-2',
+              'shadow-[2px_2px_0_0_#1D3B7A]',
+              'hover:translate-x-[1px] hover:translate-y-[1px]',
+              'hover:shadow-[1px_1px_0_0_#1D3B7A]',
+              'transition-all duration-200'
+            )}
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-surface border-b border-border">
-          <div className="px-4 py-4 space-y-3">
+        <div className="md:hidden bg-surface-2 border-b-2 border-border">
+          <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'block text-sm font-medium transition-colors hover:text-foreground',
+                  'block px-4 py-3 font-mono text-xs uppercase tracking-[0.15em]',
+                  'border border-border transition-all duration-200',
+                  'hover:translate-x-[2px] hover:translate-y-[-2px]',
                   location.pathname === item.href
-                    ? 'text-foreground'
-                    : 'text-muted'
+                    ? 'text-violet bg-surface shadow-[2px_2px_0_0_#1D3B7A]'
+                    : 'text-muted hover:text-foreground hover:bg-surface hover:shadow-[2px_2px_0_0_#303746]'
                 )}
                 onClick={() => setIsOpen(false)}
               >
