@@ -1,62 +1,59 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ThemeToggle } from '@/presentation/components/ui/theme-toggle'
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Skills', href: '/skills' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Experiences', href: '/experiences' },
-  { label: 'Contact', href: '/contact' }
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' }
 ]
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-surface border-b-2 border-border shadow-[0_4px_0_0_#1D3B7A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link
-            to="/"
-            className="group font-display text-xl font-bold text-foreground
-              hover:text-violet transition-colors"
-          >
-            {'<'}
-            <span className="text-violet">Fab</span>
-            {' />'}
-          </Link>
+    <nav className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[95vw] lg:w-[85vw] bg-card border-2 border-foreground paper-texture">
+      <div className="flex items-center justify-between px-6 py-4 md:px-10 md:py-5">
+        <a
+          href="#home"
+          className="font-display text-lg md:text-xl font-bold tracking-tight"
+        >
+          FAB<span className="text-violet">.DEV</span>
+        </a>
 
-          <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={cn(
-                  'relative px-4 py-2 font-mono text-xs uppercase tracking-[0.15em]',
-                  'transition-all duration-200',
-                  'hover:translate-y-[-2px]',
-                  location.pathname === item.href
-                    ? 'text-violet bg-surface-2 border border-border shadow-[2px_2px_0_0_#1D3B7A]'
-                    : 'text-muted hover:text-foreground border border-transparent'
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+        <div className="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={cn(
+                'transition-colors hover:text-foreground',
+                item.href === '#home' ? 'text-purple' : ''
+              )}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
 
+        <div className="hidden items-center gap-4 md:flex">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            Portfolio / 2026
+          </span>
+          <ThemeToggle />
+        </div>
+
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
           <button
             type="button"
             className={cn(
-              'md:hidden text-muted hover:text-foreground',
+              'text-muted-foreground hover:text-foreground',
               'border border-border p-2',
-              'shadow-[2px_2px_0_0_#1D3B7A]',
-              'hover:translate-x-[1px] hover:translate-y-[1px]',
-              'hover:shadow-[1px_1px_0_0_#1D3B7A]',
               'transition-all duration-200'
             )}
             onClick={() => setIsOpen(!isOpen)}
@@ -67,24 +64,23 @@ export const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-surface-2 border-b-2 border-border">
+        <div className="md:hidden bg-secondary border-t-2 border-border">
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.href}
-                to={item.href}
+                href={item.href}
                 className={cn(
                   'block px-4 py-3 font-mono text-xs uppercase tracking-[0.15em]',
                   'border border-border transition-all duration-200',
-                  'hover:translate-x-[2px] hover:translate-y-[-2px]',
-                  location.pathname === item.href
-                    ? 'text-violet bg-surface shadow-[2px_2px_0_0_#1D3B7A]'
-                    : 'text-muted hover:text-foreground hover:bg-surface hover:shadow-[2px_2px_0_0_#303746]'
+                  item.href === '#home'
+                    ? 'text-purple bg-card'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-card'
                 )}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

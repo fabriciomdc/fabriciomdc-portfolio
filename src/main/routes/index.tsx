@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from '@/presentation/components/layout/navbar'
 import { Home } from '@/presentation/pages/home'
 import { About } from '@/presentation/pages/about'
@@ -9,18 +8,19 @@ import { Contact } from '@/presentation/pages/contact'
 
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
-      <main className="pt-16">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experiences" element={<Experiences />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <main className="pt-28 paper-texture">
+        <div className="mx-auto w-[95vw] lg:w-[85vw] border-x-2 border-foreground">
+          <Home />
+          <About />
+          <Skills />
+          <Projects />
+          <Experiences />
+          <Contact />
+          <div className="m-2 mb-4" />
+        </div>
       </main>
-    </BrowserRouter>
+    </>
   )
 }
