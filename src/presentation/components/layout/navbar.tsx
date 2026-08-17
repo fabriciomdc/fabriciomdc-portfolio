@@ -1,19 +1,19 @@
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { ThemeToggle } from '@/presentation/components/ui/theme-toggle'
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/presentation/components/ui/theme-toggle";
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' }
-]
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[95vw] lg:w-[85vw] bg-card border-2 border-foreground paper-texture">
@@ -31,8 +31,8 @@ export const Navbar = () => {
               key={item.href}
               href={item.href}
               className={cn(
-                'transition-colors hover:text-foreground',
-                item.href === '#home' ? 'text-purple' : ''
+                "transition-colors hover:text-foreground",
+                item.href === "#home" ? "text-purple" : "",
               )}
             >
               {item.label}
@@ -42,7 +42,7 @@ export const Navbar = () => {
 
         <div className="hidden items-center gap-4 md:flex">
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Portfolio / 2026
+            Portfolio
           </span>
           <ThemeToggle />
         </div>
@@ -52,9 +52,9 @@ export const Navbar = () => {
           <button
             type="button"
             className={cn(
-              'text-muted-foreground hover:text-foreground',
-              'border border-border p-2',
-              'transition-all duration-200'
+              "text-muted-foreground hover:text-foreground",
+              "border border-border p-2",
+              "transition-all duration-200",
             )}
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -71,11 +71,11 @@ export const Navbar = () => {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'block px-4 py-3 font-mono text-xs uppercase tracking-[0.15em]',
-                  'border border-border transition-all duration-200',
-                  item.href === '#home'
-                    ? 'text-purple bg-card'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-card'
+                  "block px-4 py-3 font-mono text-xs uppercase tracking-[0.15em]",
+                  "border border-border transition-all duration-200",
+                  item.href === "#home"
+                    ? "text-purple bg-card"
+                    : "text-muted-foreground hover:text-foreground hover:bg-card",
                 )}
                 onClick={() => setIsOpen(false)}
               >
@@ -86,5 +86,5 @@ export const Navbar = () => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
