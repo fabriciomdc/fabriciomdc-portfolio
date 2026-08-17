@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 export const SectionLabel = ({ number, label }: { number: string; label: string }) => (
   <div className="flex items-center gap-4 mb-8">
@@ -9,25 +9,7 @@ export const SectionLabel = ({ number, label }: { number: string; label: string 
       {label}
     </span>
   </div>
-);
-
-export const InfoBlock = ({
-  number,
-  title,
-  text,
-}: {
-  number: string;
-  title: string;
-  text: string;
-}) => (
-  <div className="flex gap-6 p-8 md:p-10 transition-colors hover:bg-foreground/5">
-    <span className="font-mono text-xs font-bold text-violet">{number}</span>
-    <div>
-      <h3 className="font-display text-xl font-bold uppercase">{title}</h3>
-      <p className="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">{text}</p>
-    </div>
-  </div>
-);
+)
 
 export const HalftoneEdge = ({
   position,
