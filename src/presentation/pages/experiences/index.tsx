@@ -1,10 +1,18 @@
-import { experience } from "@/presentation/data";
-import { cn } from "@/lib/utils";
-import { SectionLabel, HalftoneEdge, InkSplatter, SpeedLines } from "@/presentation/components/ui/decorations";
+import { experience } from "@/presentation/data"
+import { cn } from "@/lib/utils"
+import {
+  SectionLabel,
+  HalftoneEdge,
+  InkSplatter,
+  SpeedLines,
+} from "@/presentation/components/ui/decorations"
 
 export const Experiences = () => {
   return (
-    <section id="experience" className="relative m-2 overflow-hidden border-2 border-foreground bg-background paper-texture-strong">
+    <section
+      id="experience"
+      className="relative m-2 overflow-hidden border-2 border-foreground bg-background paper-texture-strong"
+    >
       <HalftoneEdge position="right" />
       <HalftoneEdge position="bottom" />
       <SpeedLines angle={-60} color="var(--violet)" />
@@ -16,9 +24,9 @@ export const Experiences = () => {
         <div className="border-b-2 border-foreground p-12 lg:border-b-0 lg:border-r-2">
           <SectionLabel number="05" label="Experience" />
           <h2 className="font-display text-[clamp(3rem,5vw,3.75rem)] font-black uppercase leading-[0.9]">
-            My
+            Empresas por onde
             <br />
-            <span className="text-violet">Journey.</span>
+            <span className="text-violet">Passei</span>
           </h2>
         </div>
 
@@ -29,7 +37,7 @@ export const Experiences = () => {
                 key={index}
                 className={cn(
                   "relative pl-8",
-                  index === experience.length - 1 ? "pb-0" : "pb-12"
+                  index === experience.length - 1 ? "pb-0" : "pb-12",
                 )}
               >
                 <span className="absolute left-[-9px] top-1 h-4 w-4 rounded-full border-2 border-foreground bg-violet" />
@@ -39,14 +47,39 @@ export const Experiences = () => {
                 <h3 className="font-display mt-3 text-xl font-black uppercase">
                   {item.role}
                 </h3>
+                <div className="mt-2 flex items-center gap-2">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.1em]">
+                    {item.company}
+                  </span>
+                  <span className="text-muted-foreground">·</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                    {item.type}
+                  </span>
+                </div>
+                <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                  {item.location}
+                </span>
                 <p className="mt-3 max-w-[560px] text-sm leading-relaxed text-muted-foreground">
-                  {item.text}
+                  {item.description}
                 </p>
+                {item.highlights.length > 0 && (
+                  <ul className="mt-3 space-y-1">
+                    {item.highlights.map((highlight, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-violet" />
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

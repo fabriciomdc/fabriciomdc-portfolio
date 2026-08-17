@@ -1,5 +1,11 @@
 import { Mail } from "lucide-react";
-import { SectionLabel, HalftoneEdge, InkSplatter, SpeedLines, ActionBurst } from "@/presentation/components/ui/decorations";
+import {
+  SectionLabel,
+  HalftoneEdge,
+  InkSplatter,
+  SpeedLines,
+  ActionBurst,
+} from "@/presentation/components/ui/decorations";
 
 const GithubIcon = () => (
   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
@@ -16,7 +22,10 @@ const LinkedinIcon = () => (
 export const Contact = () => {
   return (
     <>
-      <section id="contact" className="relative m-2 overflow-hidden border-2 border-foreground bg-background paper-texture-strong">
+      <section
+        id="contact"
+        className="relative m-2 overflow-hidden border-2 border-foreground bg-background paper-texture-strong"
+      >
         <HalftoneEdge position="top" />
         <HalftoneEdge position="left" />
         <SpeedLines angle={30} />
@@ -27,10 +36,9 @@ export const Contact = () => {
 
         <div className="relative z-10 grid lg:grid-cols-[1fr_1fr]">
           <div className="border-r-2 border-foreground p-12">
-            <SectionLabel number="06" label="Let's Connect" />
+            <SectionLabel number="06" label="Contact" />
             <h2 className="font-display max-w-[560px] text-[clamp(3rem,6vw,4.5rem)] font-black uppercase leading-[0.9]">
-              Let's create something{" "}
-              <span className="text-violet">meaningful.</span>
+              Vamos <span className="text-violet">Conversar</span>
             </h2>
           </div>
 
@@ -38,7 +46,7 @@ export const Contact = () => {
             <div>
               <div className="relative mb-6 inline-block rounded-[20px] border-2 border-foreground bg-foreground px-4 py-3">
                 <span className="font-display text-sm font-bold text-background">
-                  Open to opportunities!
+                  Open to work!
                 </span>
                 <div
                   className="absolute -bottom-3 left-5"
@@ -52,7 +60,7 @@ export const Contact = () => {
                 />
               </div>
               <p className="max-w-[450px] leading-relaxed text-muted-foreground">
-                Have a project, idea or opportunity in mind? Let's talk.
+                Tem um projeto, ideia ou oportunidade em mente? Vamos conversar.
               </p>
             </div>
 
