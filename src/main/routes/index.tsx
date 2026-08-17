@@ -6,7 +6,7 @@ import { Projects } from '@/presentation/pages/projects'
 import { Experiences } from '@/presentation/pages/experiences'
 import { Contact } from '@/presentation/pages/contact'
 
-export const Router = () => {
+export const Layout = () => {
   return (
     <>
       <Navbar />
