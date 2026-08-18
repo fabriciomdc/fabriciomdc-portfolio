@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/presentation/components/ui/theme-toggle";
+import iconLogo from "@/presentation/assets/icons/icon-logo-removebg-preview.png";
+import iconLogoBlue from "@/presentation/assets/icons/icon-logo-blue-removebg-preview.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -14,15 +17,17 @@ const navItems = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   return (
     <nav className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[95vw] lg:w-[85vw] bg-card border-2 border-foreground paper-texture">
       <div className="flex items-center justify-between px-6 py-4 md:px-10 md:py-5">
-        <a
-          href="#home"
-          className="font-display text-lg md:text-xl font-bold tracking-tight"
-        >
-          FAB<span className="text-violet">.DEV</span>
+        <a href="#home" className="flex items-center gap-2">
+          <img
+            src={theme === "light" ? iconLogoBlue : iconLogo}
+            alt="Fab.dev"
+            className="h-10 w-10"
+          />
         </a>
 
         <div className="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground md:flex">
@@ -41,9 +46,6 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-4 md:flex">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Portfolio
-          </span>
           <ThemeToggle />
         </div>
 

@@ -1,3 +1,5 @@
+import iconLogoPurple from "@/presentation/assets/icons/icon-logo-purple-removebg-preview.png"
+
 export const HeroIllustration = () => {
   return (
     <div className="relative overflow-hidden border-t-2 border-foreground">
@@ -21,6 +23,12 @@ export const HeroIllustration = () => {
               />
             </div>
           </div>
+
+          <img
+            src={iconLogoPurple}
+            alt=""
+            className="absolute bottom-4 left-4 h-12 w-12 opacity-80"
+          />
 
           <span className="font-mono absolute bottom-4 right-4 text-[9px] uppercase tracking-[0.2em] text-violet font-bold">
             github.com/fabriciomdc

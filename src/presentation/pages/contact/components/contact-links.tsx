@@ -1,4 +1,7 @@
 import { Mail } from "lucide-react"
+import { useTheme } from "next-themes"
+import iconLogoDefault from "@/presentation/assets/icons/default-logo-removebg-preview.png"
+import iconLogoBlue from "@/presentation/assets/icons/icon-logo-blue-removebg-preview.png"
 
 const GithubIcon = () => (
   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
@@ -19,6 +22,8 @@ const contactLinks = [
 ]
 
 export const ContactLinks = () => {
+  const { theme } = useTheme()
+
   return (
     <div className="flex flex-col justify-between p-12">
       <div>
@@ -40,6 +45,11 @@ export const ContactLinks = () => {
         <p className="max-w-[450px] leading-relaxed text-muted-foreground">
           Tem um projeto, ideia ou oportunidade em mente? Vamos conversar.
         </p>
+        <img
+          src={theme === "light" ? iconLogoBlue : iconLogoDefault}
+          alt=""
+          className="mt-6 h-16 w-16 opacity-60"
+        />
       </div>
 
       <div className="mt-10 flex flex-wrap gap-3">
