@@ -9,14 +9,7 @@
     "skipLibCheck": true,
 
     "paths": {
-      "@/*": ["./src/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@domain/*": ["./src/domain/*"],
-      "@data/*": ["./src/data/*"],
-      "@validation/*": ["./src/validation/*"],
-      "@infra/*": ["./src/infra/*"],
-      "@presentation/*": ["./src/presentation/*"],
-      "@main/*": ["./src/main/*"]
+      "@/*": ["./src/*"]
     },
 
     "moduleResolution": "bundler",
