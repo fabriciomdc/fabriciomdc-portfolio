@@ -1,6 +1,6 @@
 <div align="center">
 
-# FAB.DEV — Portfólio
+# Fabriciomdec — Portfólio
 
 ### Onde código encontra criatividade
 
@@ -24,7 +24,6 @@ Portfolio pessoal com estética **comic book / mangá**, seguindo arquitetura **
 - **Tema Dark/Light** — alternância com `next-themes`
 - **Animações** — Framer Motion com scroll-triggered transitions
 - **Design HQ** — paper texture, ink splatters, speed lines, halftone edges
-- **Responsivo** — layout fluido `95vw → 85vw`, funciona em 4K
 - **Tipografia** — Space Grotesk (display) + Inter (body)
 - **Ícones SVG** — categorizados por linguagem, framework e ferramenta
 - **GitHub API** — stats públicos (commits, streak, linguagens)
@@ -125,21 +124,6 @@ pnpm preview
 | Blue | `#3B82F6` | Tema light logo |
 | Dark | `#0A0C12` | Background dark |
 
-## Deploy
-
-O projeto pode ser deployado em qualquer plataforma estática:
-
-- [Vercel](https://vercel.com)
-- [Netlify](https://netlify.com)
-- [GitHub Pages](https://pages.github.com)
-
-```bash
-# Build
-pnpm build
-
-# A pasta dist/ está pronta para deploy
-```
-
 ## License
 
 Projeto pessoal. Todos os direitos reservados.
@@ -147,8 +131,6 @@ Projeto pessoal. Todos os direitos reservados.
 ---
 
 <div align="center">
-
-**Feito com intenção** — 2026
 
 [![GitHub](https://img.shields.io/badge/GitHub-fabriciomdc-181717?style=flat-square&logo=github)](https://github.com/fabriciomdc)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-fabriciomdc-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/fabriciomdc/)
