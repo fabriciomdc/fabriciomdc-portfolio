@@ -1,7 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import { Typography } from "@/presentation/components/ui/typography";
 
-export const HeroContent = () => {
+interface HeroContentProps {
+  onOpenCV?: () => void;
+}
+
+export const HeroContent = ({ onOpenCV }: HeroContentProps) => {
   return (
     <div className="relative z-10 flex flex-col justify-center p-8 md:p-14 lg:p-16">
       <div className="space-y-3">
@@ -33,7 +37,11 @@ export const HeroContent = () => {
 
       <div className="mt-10 flex flex-wrap items-center gap-4">
         <a
-          href="#about"
+          href="/cv"
+          onClick={(e) => {
+            e.preventDefault()
+            onOpenCV?.()
+          }}
           className="group inline-flex items-center gap-3 border-2 border-foreground bg-violet px-6 py-4 text-primary-foreground shadow-[4px_4px_0_0_var(--foreground)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
         >
           <span className="font-mono text-[11px] font-bold uppercase tracking-[0.16em]">

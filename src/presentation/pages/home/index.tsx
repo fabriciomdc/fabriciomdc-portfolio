@@ -7,7 +7,11 @@ import { IssueSidebar } from "./components/issue-sidebar";
 import { HeroContent } from "./components/hero-content";
 import { HeroIllustration } from "./components/hero-illustration";
 
-export const Home = () => {
+interface HomeProps {
+  onOpenCV?: () => void;
+}
+
+export const Home = ({ onOpenCV }: HomeProps) => {
   return (
     <section
       id="home"
@@ -23,7 +27,7 @@ export const Home = () => {
 
       <div className="grid min-h-[600px] grid-cols-1 lg:grid-cols-[100px_1fr_1fr]">
         <IssueSidebar />
-        <HeroContent />
+        <HeroContent onOpenCV={onOpenCV} />
         <HeroIllustration />
       </div>
     </section>
