@@ -17,7 +17,7 @@
 
 ## Visão Geral
 
-Portfolio pessoal com estética **comic book / mangá**, seguindo arquitetura **Clean React** (Manguinho). Cada seção é um "quadrinho" interativo com texturas de papel, ink splatters, halftone dots e animações suaves.
+Portfolio pessoal com estética **comic book **, seguindo arquitetura **Clean React** (Manguinho).
 
 ## Features
 
