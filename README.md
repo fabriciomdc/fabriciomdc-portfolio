@@ -1,6 +1,6 @@
 <div align="center">
 
-# Fabriciomdec — Portfólio
+# FAB.DEV — Portfólio
 
 ### Onde código encontra criatividade
 
@@ -17,13 +17,14 @@
 
 ## Visão Geral
 
-Portfolio pessoal com estética **comic book**, seguindo arquitetura **Clean React** (Manguinho).
+Portfolio pessoal com estética **comic book / mangá**, seguindo arquitetura **Clean React** (Manguinho). Cada seção é um "quadrinho" interativo com texturas de papel, ink splatters, halftone dots e animações suaves.
 
 ## Features
 
 - **Tema Dark/Light** — alternância com `next-themes`
 - **Animações** — Framer Motion com scroll-triggered transitions
 - **Design HQ** — paper texture, ink splatters, speed lines, halftone edges
+- **Responsivo** — layout fluido `95vw → 85vw`, funciona em 4K
 - **Tipografia** — Space Grotesk (display) + Inter (body)
 - **Ícones SVG** — categorizados por linguagem, framework e ferramenta
 - **GitHub API** — stats públicos (commits, streak, linguagens)
@@ -78,9 +79,9 @@ src/
 
 Seguindo os princípios do **Clean Architecture** adaptado para frontend:
 
-- **SRP** 
-- **YAGNI** 
-- **Componentização**
+- **SRP** — cada componente faz uma coisa só
+- **YAGNI** — nada criado antes da necessidade
+- **Componentização** — extração lógica em sub-componentes
 - **Commits convencionais** — `feat`, `refactor`, `chore`, `fix`
 - **Gitflow** — branches `main`, `develop`, `feature/*`
 
@@ -123,6 +124,21 @@ pnpm preview
 | Paper | `#D8D5CC` | Background light |
 | Blue | `#3B82F6` | Tema light logo |
 | Dark | `#0A0C12` | Background dark |
+
+## Deploy
+
+O projeto pode ser deployado em qualquer plataforma estática:
+
+- [Vercel](https://vercel.com)
+- [Netlify](https://netlify.com)
+- [GitHub Pages](https://pages.github.com)
+
+```bash
+# Build
+pnpm build
+
+# A pasta dist/ está pronta para deploy
+```
 
 ## License
 
