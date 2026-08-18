@@ -2,7 +2,7 @@
 
 # Fabriciomdec — Portfólio
 
-### Onde código encontra criatividade
+### Código pode ser divertido as vezes :)
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
